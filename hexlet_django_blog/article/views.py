@@ -1,5 +1,11 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def index(request):
-    return HttpResponse('article')
+    return render(
+        request,
+        "article_index.html",
+        context={
+            "application_name": "Статьи",
+        },
+    )
