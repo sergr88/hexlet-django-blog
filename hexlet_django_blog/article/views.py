@@ -9,3 +9,11 @@ class IndexView(View):
             'article_index.html',
             context={'application_name': 'Статьи'},
         )
+
+
+def show(request, tags, article_id):
+    return render(
+        request,
+        'article_show.html',
+        context={'tags': tags, 'article_id': article_id},
+    )
