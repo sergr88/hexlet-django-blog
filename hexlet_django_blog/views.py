@@ -3,7 +3,7 @@ from django.urls import reverse
 
 
 def index(request):
-    return redirect(reverse('article', kwargs={'tags': 'python', 'article_id': 42}))
+    return render(request, 'index.html', context={'who': 'World'})
 
 
 def about(request):
