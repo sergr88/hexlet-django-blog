@@ -1,13 +1,16 @@
 from django.shortcuts import render
 from django.views import View
 
+from hexlet_django_blog.article import models
+
 
 class IndexView(View):
     def get(self, request, *args, **kwargs):
+        articles = models.Article.objects.all()[:15]
         return render(
             request,
-            'article_index.html',
-            context={'application_name': 'Статьи'},
+            'articles/index.html',
+            context={'articles': articles},
         )
 
 
